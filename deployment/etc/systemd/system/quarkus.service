@@ -1,0 +1,19 @@
+[Unit]
+Description=Quarkus Service
+After=network.target
+Wants=network.target
+
+[Service]
+Type=notify
+User=quarkus-user
+EnvironmentFile=/opt/quarkus/commands/quarkus.env
+ExecStart=/bin/sh -c 'exec $QUARKUS_RUN_COMMAND'
+WorkingDirectory=/var/log/quarkus/
+SuccessExitStatus=0 143
+LimitAS=infinity
+LimitRSS=infinity
+LimitCORE=infinity
+LimitNOFILE=infinity
+
+[Install]
+WantedBy=multi-user.target
