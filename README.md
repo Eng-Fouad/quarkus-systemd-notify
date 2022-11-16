@@ -9,7 +9,7 @@ You can compile `systemd-notify.so` library on Ubuntu 22.04 x64 as follows:
 ```shell script
 sudo apt install g++ libsystemd-dev
 cd systemd-notify-jni
-../gradlew quarkusDev
+../gradlew linkRelease
 ```
 
 or use the file located at:
